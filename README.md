@@ -1,6 +1,6 @@
 # Quasar App (quasar-task)
 
-website link: https://quasarvue.netlify.app
+website link: https://dezchik.netlify.app
 
 this is the task
 
