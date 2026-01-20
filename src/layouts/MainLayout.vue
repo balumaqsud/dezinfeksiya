@@ -87,7 +87,10 @@
         <div class="footer-bottom">
           <div class="footer-divider"></div>
           <div class="footer-bottom-content">
-            <p class="copyright">© 2024 DEZ.CHIK. {{ t('allRightsReserved') }}</p>
+            <p class="copyright">© 2026 DEZ.CHIK. {{ t('allRightsReserved') }}</p>
+            <a href="https://t.me/olloberganabdulla" target="_blank" class="made-by">
+              {{ t('madeBy') }} @olloberganabdulla
+            </a>
           </div>
         </div>
       </div>
@@ -117,6 +120,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     registrationDate: 'Reg. date',
     scanQR: 'Scan to verify',
     allRightsReserved: 'All rights reserved.',
+    madeBy: 'Made by',
   },
   ru: {
     companyDescription: 'Профессиональные услуги дезинфекции и санитарной обработки. Мы обеспечиваем чистую и безопасную среду для вашего дома и бизнеса.',
@@ -129,6 +133,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     registrationDate: 'Дата рег.',
     scanQR: 'Сканируйте для проверки',
     allRightsReserved: 'Все права защищены.',
+    madeBy: 'Сделано',
   },
   uz: {
     companyDescription: "Professional dezinfeksiya va sanitariya xizmatlari. Biz uyingiz va biznesingiz uchun toza va xavfsiz muhitni ta'minlaymiz.",
@@ -141,6 +146,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     registrationDate: "Ro'yxat sanasi",
     scanQR: 'Tekshirish uchun skanerlang',
     allRightsReserved: 'Barcha huquqlar himoyalangan.',
+    madeBy: 'Yaratuvchi',
   },
 };
 
@@ -416,8 +422,10 @@ const openInstagram = () => {
 
 .footer-bottom-content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 6px;
 }
 
 .copyright {
@@ -425,5 +433,17 @@ const openInstagram = () => {
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+}
+
+.made-by {
+  color: #999;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0088cc;
+  }
 }
 </style>

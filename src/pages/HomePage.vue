@@ -61,7 +61,8 @@
                 class="booking-input"
                 prefix="+"
                 type="tel"
-                :rules="[val => !!val || t('phoneRequired'), val => val.length >= 9 || t('phoneInvalid')]"
+                maxlength="12"
+                :rules="[val => !!val || t('phoneRequired'), val => val.length === 12 || t('phoneInvalid')]"
               >
                 <template v-slot:prepend>
                   <q-icon name="phone" />
@@ -522,7 +523,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     supportDesc: "Onlayn rejalashtirish va kunlik mijozlarga xizmat ko'rsatish.",
     whoWeAre: "BIZ HAQIMIZDA",
     ourStory: "Bizning Tarixmiz",
-    aboutDescription: "DEZ.CHIK kompaniyasi Toshkent va Toshkent viloyatida muvaffaqiyatli xizmat ko'rsatadi. Bizning jamoamizda 3 yildan ortiq tajribaga ega 20 nafar professional dezinfektor ishlaydi. Har bir mijozga tibbiy mutaxassis tomonidan bepul maslahat beriladi.",
+    aboutDescription: "DEZ.CHIK kompaniyasi Toshkent va Toshkent viloyatida muvaffaqiyatli xizmat ko'rsatadi. Bizning jamoamizda 3 yildan ortiq tajribaga ega 8 nafar professional dezinfektor ishlaydi. Har bir mijozga tibbiy mutaxassis tomonidan bepul maslahat beriladi.",
     feature1: "Barcha turdagi ob'ektlarda ishlaymiz - yotoqxonalar, xostellar, tijorat va davlat hududlari",
     feature2: "Naqd va naqdsiz to'lov usullari mavjud",
     feature3: "Yuridik shaxslar bilan rasmiy shartnoma asosida ishlaymiz",
@@ -586,7 +587,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     supportDesc: "Онлайн-планирование и круглосуточная клиентская поддержка.",
     whoWeAre: "О НАС",
     ourStory: "Наша История",
-    aboutDescription: "Компания DEZ.CHIK успешно предоставляет свои услуги в Ташкенте и Ташкентской области. На нашу компанию работают 20 профессиональных дезинфекторов с опытом работы от 3 лет. Каждому клиенту предоставляется бесплатная консультация мед. специалиста.",
+    aboutDescription: "Компания DEZ.CHIK успешно предоставляет свои услуги в Ташкенте и Ташкентской области. На нашу компанию работают 8 профессиональных дезинфекторов с опытом работы от 3 лет. Каждому клиенту предоставляется бесплатная консультация мед. специалиста.",
     feature1: "Работа на любых объектах - от общежитий и хостелов до коммерческих и государственных территорий",
     feature2: "Возможна оплата как наличным, так и безналичным расчетом",
     feature3: "Работаем с юридическими лицами на основе официального договора",
@@ -650,7 +651,7 @@ const translations: Record<LangCode, Record<string, string>> = {
     supportDesc: "Online planning and round-the-clock customer support.",
     whoWeAre: "WHO WE ARE",
     ourStory: "Our Story",
-    aboutDescription: "DEZ.CHIK company successfully provides its services in Tashkent and Tashkent region. Our company employs 20 professional disinfectors with over 3 years of experience. Each client receives a free consultation from a medical specialist.",
+    aboutDescription: "DEZ.CHIK company successfully provides its services in Tashkent and Tashkent region. Our company employs 8 professional disinfectors with over 3 years of experience. Each client receives a free consultation from a medical specialist.",
     feature1: "Work at any facility - from dormitories and hostels to commercial and government areas",
     feature2: "Payment available in both cash and non-cash",
     feature3: "We work with legal entities based on official contracts",
