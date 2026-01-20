@@ -310,7 +310,7 @@ const handleTelegram = () => {
   border-radius: 32px;
   padding: 9px 11px;
   margin: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   position: relative;
 
   .navbar-content {
@@ -467,7 +467,7 @@ const handleTelegram = () => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   }
 
   .navbar-brand {
@@ -528,7 +528,7 @@ const handleTelegram = () => {
     display: flex;
     flex-direction: column;
     gap: 11px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   }
 
   .mobile-nav-link {
@@ -651,7 +651,7 @@ const handleTelegram = () => {
     color: #333;
     z-index: 9999;
     max-width: 200px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   }
 }
 
