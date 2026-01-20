@@ -1,6 +1,6 @@
 /**
  * Telegram Bot API utility for sending booking notifications
- * 
+ *
  * To set up:
  * 1. Create a Telegram bot via @BotFather and get the BOT_TOKEN
  * 2. Get your chat ID by messaging @userinfobot or @getidsbot
@@ -8,9 +8,9 @@
  * 4. Replace the placeholder values below with your actual credentials
  */
 
-// Configuration - Replace these with your actual values
-const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // Get from @BotFather
-const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE'; // Chat ID of @dezenchik or the group
+// Configuration
+const TELEGRAM_BOT_TOKEN = '8565537112:AAF9F32L27vNFGrARnFQMxK3NtechAIUO1Q';
+const TELEGRAM_CHAT_ID = '@olloberganabdulla'; // Your Telegram username
 
 // Telegram API endpoint
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -64,13 +64,6 @@ _DEZ.CHIK - Professional Dezinfeksiya_
  * Send booking data to Telegram
  */
 export const sendBookingToTelegram = async (data: BookingData): Promise<{ success: boolean; error?: string }> => {
-  // Validate configuration
-  if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID_HERE') {
-    console.warn('Telegram bot is not configured. Please set up BOT_TOKEN and CHAT_ID in src/utils/telegram.ts');
-    // Return success anyway for demo purposes - remove this in production
-    return { success: true };
-  }
-
   const message = createBookingMessage(data);
 
   try {
