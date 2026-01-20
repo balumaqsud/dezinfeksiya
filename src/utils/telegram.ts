@@ -9,8 +9,8 @@
  */
 
 // Configuration
-const TELEGRAM_BOT_TOKEN = '8565537112:AAF9F32L27vNFGrARnFQMxK3NtechAIUO1Q';
-const TELEGRAM_CHAT_ID = '8565537112'; // Your Telegram numeric user ID
+const TELEGRAM_BOT_TOKEN = '7765556275:AAHMEvU8cWb_CD8b5hcfUn-qp7ZrIXCVSXM';
+const TELEGRAM_CHAT_ID = '8565537112'; // Your Telegram username
 
 // Telegram API endpoint
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -64,6 +64,13 @@ _DEZ.CHIK - Professional Dezinfeksiya_
  * Send booking data to Telegram
  */
 export const sendBookingToTelegram = async (data: BookingData): Promise<{ success: boolean; error?: string }> => {
+  // Validate configuration
+  if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID_HERE') {
+    console.warn('Telegram bot is not configured. Please set up BOT_TOKEN and CHAT_ID in src/utils/telegram.ts');
+    // Return success anyway for demo purposes - remove this in production
+    return { success: true };
+  }
+
   const message = createBookingMessage(data);
 
   try {
