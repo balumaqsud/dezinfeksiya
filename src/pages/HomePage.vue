@@ -692,37 +692,48 @@ const handleTelegram = () => {
 
 // Booking Modal Styles
 .booking-modal {
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  max-width: 800px;
+  max-width: 900px;
   width: 95vw;
   position: relative;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     max-width: 100%;
+    width: 94vw;
     margin: 8px;
-    border-radius: 20px;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 480px) {
+    width: 96vw;
+    margin: 4px;
+    border-radius: 14px;
   }
 }
 
 .close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   z-index: 10;
   background: rgba(0, 0, 0, 0.1) !important;
 
   &:hover {
     background: rgba(0, 0, 0, 0.2) !important;
   }
+
+  @media (max-width: 480px) {
+    top: 8px;
+    right: 8px;
+  }
 }
 
 .booking-content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  min-height: 450px;
+  grid-template-columns: 0.8fr 1.2fr;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 }
@@ -733,116 +744,176 @@ const handleTelegram = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 30px;
+  padding: 28px 24px;
   position: relative;
 
-  @media (max-width: 700px) {
-    padding: 30px 20px;
+  @media (max-width: 768px) {
+    flex-direction: row;
+    padding: 16px 20px;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 14px 16px;
+    gap: 12px;
   }
 }
 
 .booking-logo {
-  width: 180px;
+  width: 140px;
   height: auto;
   object-fit: contain;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
 
-  @media (max-width: 700px) {
-    width: 120px;
-    margin-bottom: 16px;
+  @media (max-width: 768px) {
+    width: 80px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
   }
 }
 
 .discount-badge {
   background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   color: #fff;
-  padding: 16px 28px;
-  border-radius: 16px;
+  padding: 12px 20px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 
-  @media (max-width: 700px) {
-    padding: 12px 20px;
+  @media (max-width: 768px) {
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 12px;
+    border-radius: 8px;
   }
 }
 
 .discount-percent {
   display: block;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 900;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   background: linear-gradient(135deg, #FFD700, #FFA500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  @media (max-width: 700px) {
-    font-size: 32px;
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 22px;
   }
 }
 
 .discount-text {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   opacity: 0.9;
 
-  @media (max-width: 700px) {
-    font-size: 12px;
+  @media (max-width: 768px) {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
   }
 }
 
 .booking-form-side {
-  padding: 40px 36px;
+  padding: 28px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  @media (max-width: 700px) {
-    padding: 30px 24px;
+  @media (max-width: 768px) {
+    padding: 20px 24px 24px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 16px 20px;
   }
 }
 
 .booking-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   color: #1a1a1a;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 
-  @media (max-width: 700px) {
-    font-size: 24px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 }
 
 .booking-subtitle {
-  font-size: 15px;
+  font-size: 14px;
   color: #666;
-  margin: 0 0 28px 0;
+  margin: 0 0 20px 0;
   font-weight: 500;
 
-  @media (max-width: 700px) {
-    font-size: 14px;
-    margin-bottom: 20px;
+  @media (max-width: 768px) {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    margin-bottom: 14px;
   }
 }
 
 .booking-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
 }
 
 .booking-input {
   :deep(.q-field__control) {
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   :deep(.q-field__prepend) {
     color: #4F46E5;
+  }
+
+  @media (max-width: 480px) {
+    :deep(.q-field__control) {
+      border-radius: 8px;
+      min-height: 44px;
+    }
+
+    :deep(.q-field__native) {
+      font-size: 14px;
+    }
+
+    :deep(.q-field__label) {
+      font-size: 13px;
+    }
   }
 }
 
@@ -850,16 +921,23 @@ const handleTelegram = () => {
   background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
   color: #fff !important;
   font-weight: 700;
-  font-size: 16px;
-  padding: 14px 28px;
-  border-radius: 12px;
-  margin-top: 8px;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-top: 6px;
   box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3);
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 8px;
+    margin-top: 4px;
   }
 }
 
@@ -1349,6 +1427,14 @@ const handleTelegram = () => {
   overflow: hidden;
   margin-bottom: 32px;
   position: relative;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+  }
 }
 
 .testimonials-track {
@@ -1362,6 +1448,10 @@ const handleTelegram = () => {
   flex-shrink: 0;
   box-sizing: border-box;
   padding: 0 8px;
+
+  @media (max-width: 480px) {
+    padding: 0 4px;
+  }
 }
 
 .testimonials-grid {
@@ -1371,7 +1461,7 @@ const handleTelegram = () => {
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
 
     // Show only one card per slide on mobile
     .testimonial-card:nth-child(2) {
@@ -1396,6 +1486,16 @@ const handleTelegram = () => {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+    border-radius: 10px;
+  }
 }
 
 .quote-icon {
@@ -1405,6 +1505,16 @@ const handleTelegram = () => {
   line-height: 1;
   margin-bottom: -10px;
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+    margin-bottom: -8px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+    margin-bottom: -6px;
+  }
 }
 
 .testimonial-text {
@@ -1414,6 +1524,17 @@ const handleTelegram = () => {
   line-height: 1.7;
   margin-bottom: 20px;
   flex-grow: 1;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
 }
 
 .testimonial-author {
@@ -1422,6 +1543,10 @@ const handleTelegram = () => {
   gap: 12px;
   margin-top: auto;
   flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
 }
 
 .author-avatar {
@@ -1434,6 +1559,16 @@ const handleTelegram = () => {
   justify-content: center;
   color: #666;
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .author-info {
@@ -1446,11 +1581,23 @@ const handleTelegram = () => {
   font-size: 15px;
   font-weight: 700;
   color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 }
 
 .author-role {
   font-size: 13px;
   color: #888;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .testimonial-nav {
@@ -1458,6 +1605,10 @@ const handleTelegram = () => {
   justify-content: center;
   gap: 12px;
   margin-top: 0;
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
 }
 
 .nav-btn {
@@ -1473,6 +1624,13 @@ const handleTelegram = () => {
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+  }
+
+  @media (max-width: 480px) {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
   }
 }
 
