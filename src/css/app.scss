@@ -1,5 +1,42 @@
 // app global css in SCSS form
 
+// Global typography - bolder and bigger fonts
+body {
+  font-weight: 500;
+}
+
+// Override Quasar typography classes for bolder text
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6 {
+  font-weight: 800 !important;
+}
+
+.text-subtitle1, .text-subtitle2 {
+  font-weight: 600 !important;
+}
+
+.text-body1 {
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.7;
+}
+
+.text-body2 {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+// Make all Material Icons bolder
+.material-icons,
+.q-icon {
+  font-weight: 600 !important;
+  -webkit-text-stroke: 0.5px currentColor;
+}
+
+// Make buttons text bolder
+.q-btn {
+  font-weight: 600 !important;
+}
+
 // Remove default header background
 .q-header {
   background: transparent !important;

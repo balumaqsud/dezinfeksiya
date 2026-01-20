@@ -351,11 +351,11 @@ const handleTelegram = () => {
   }
 
   .brand-text {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     color: #1a1a1a;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-shadow:
       1px 1px 0px rgba(255, 255, 255, 0.3),
       -1px -1px 0px rgba(0, 0, 0, 0.2),
@@ -373,7 +373,8 @@ const handleTelegram = () => {
 
   .nav-link {
     color: #333 !important;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 15px;
     padding: 11px 21px;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -389,6 +390,7 @@ const handleTelegram = () => {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       color: #2196f3 !important;
+      font-weight: 800;
     }
   }
 
@@ -407,8 +409,8 @@ const handleTelegram = () => {
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     padding: 4px 8px;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 700;
     color: #333 !important;
     transition: all 0.3s ease;
     min-height: 32px;
@@ -423,10 +425,15 @@ const handleTelegram = () => {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: none;
-    width: 44px;
-    height: 44px;
-    font-weight: 500;
+    width: 46px;
+    height: 46px;
+    font-weight: 700;
     transition: all 0.3s ease;
+
+    .q-icon {
+      font-size: 22px;
+      -webkit-text-stroke: 1px currentColor;
+    }
 
     &.call-btn {
       background: linear-gradient(135deg, #34C759 0%, #30D158 100%) !important;
@@ -501,11 +508,11 @@ const handleTelegram = () => {
   }
 
   .brand-text {
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 900;
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     color: #1a1a1a;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-shadow:
       1px 1px 0px rgba(255, 255, 255, 0.3),
       -1px -1px 0px rgba(0, 0, 0, 0.2),
@@ -515,6 +522,11 @@ const handleTelegram = () => {
 
   .menu-toggle {
     color: #333 !important;
+
+    .q-icon {
+      font-size: 26px;
+      -webkit-text-stroke: 1px currentColor;
+    }
   }
 
   .mobile-menu {
@@ -534,7 +546,8 @@ const handleTelegram = () => {
   .mobile-nav-link {
     width: 100%;
     color: #333 !important;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 16px;
     padding: 15px 21px;
     border-radius: 20px;
     text-align: left;
@@ -552,6 +565,7 @@ const handleTelegram = () => {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       color: #2196f3 !important;
+      font-weight: 800;
     }
   }
 
@@ -571,18 +585,19 @@ const handleTelegram = () => {
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     padding: 8px 14px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     color: #333 !important;
     transition: all 0.3s ease;
 
     .lang-flag {
-      font-size: 14px;
+      font-size: 16px;
       margin-right: 5px;
     }
 
     .lang-code {
-      font-size: 12px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     &:hover {
@@ -593,6 +608,7 @@ const handleTelegram = () => {
       background: rgba(33, 150, 243, 0.15) !important;
       border-color: rgba(33, 150, 243, 0.3);
       color: #2196f3 !important;
+      font-weight: 800;
     }
   }
 
@@ -612,9 +628,15 @@ const handleTelegram = () => {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 15px 21px;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 15px;
     transition: all 0.3s ease;
     justify-content: center;
+
+    .q-icon {
+      font-size: 22px;
+      -webkit-text-stroke: 1px currentColor;
+    }
 
     &.call-btn {
       background: linear-gradient(135deg, #34C759 0%, #30D158 100%) !important;
@@ -671,7 +693,7 @@ const handleTelegram = () => {
 }
 
 .lang-flag {
-  font-size: 16px;
+  font-size: 18px;
 }
 </style>
 
@@ -712,8 +734,8 @@ const handleTelegram = () => {
   }
 
   .lang-item-text {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 700;
   }
 }
 </style>

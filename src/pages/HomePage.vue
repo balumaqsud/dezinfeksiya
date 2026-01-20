@@ -4,8 +4,8 @@
       <div class="col-12">
         <q-card class="q-pa-md home-card">
           <q-card-section>
-            <div class="text-h4 q-mb-md">Welcome Home</div>
-            <p class="text-body1">This is the home page of your application.</p>
+            <div class="page-title q-mb-md">Welcome Home</div>
+            <p class="page-text">This is the home page of your application.</p>
           </q-card-section>
         </q-card>
       </div>
@@ -29,5 +29,23 @@
   @media (max-width: 600px) {
     min-height: 300px;
   }
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+
+  @media (max-width: 600px) {
+    font-size: 26px;
+  }
+}
+
+.page-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #444;
+  line-height: 1.7;
 }
 </style>

@@ -240,16 +240,17 @@ const openInstagram = () => {
   }
 
   .footer-brand-text {
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 24px;
+    font-weight: 900;
     color: #1a1a1a;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
 
   .company-description {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.6;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.7;
     margin-bottom: 20px;
   }
 
@@ -259,10 +260,15 @@ const openInstagram = () => {
   }
 
   .social-btn {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+
+    .q-icon {
+      font-size: 22px;
+      -webkit-text-stroke: 1px currentColor;
+    }
 
     &.telegram-btn {
       color: #0088cc;
@@ -285,8 +291,8 @@ const openInstagram = () => {
 // Contact Section
 .contact-section {
   .section-title {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 800;
     color: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -298,11 +304,13 @@ const openInstagram = () => {
     align-items: flex-start;
     gap: 12px;
     margin-bottom: 16px;
-    color: #666;
+    color: #555;
 
     .q-icon {
       margin-top: 2px;
-      color: #999;
+      color: #777;
+      font-size: 20px;
+      -webkit-text-stroke: 0.5px currentColor;
     }
 
     .contact-text {
@@ -313,8 +321,8 @@ const openInstagram = () => {
       a {
         color: #1a1a1a;
         text-decoration: none;
-        font-weight: 500;
-        font-size: 14px;
+        font-weight: 700;
+        font-size: 15px;
 
         &:hover {
           color: #0088cc;
@@ -322,12 +330,14 @@ const openInstagram = () => {
       }
 
       span {
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 500;
       }
 
       .contact-label {
-        font-size: 12px;
-        color: #999;
+        font-size: 13px;
+        color: #888;
+        font-weight: 500;
       }
     }
   }
@@ -336,8 +346,8 @@ const openInstagram = () => {
 // License Section
 .license-section {
   .section-title {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 800;
     color: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -353,15 +363,21 @@ const openInstagram = () => {
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 700;
     color: #1a1a1a;
-    font-size: 14px;
+    font-size: 15px;
+
+    .q-icon {
+      font-size: 22px;
+      -webkit-text-stroke: 0.5px currentColor;
+    }
   }
 
   .license-details {
-    color: #666;
-    font-size: 13px;
-    line-height: 1.5;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
   }
 
   .qr-code-container {
@@ -381,8 +397,9 @@ const openInstagram = () => {
   }
 
   .qr-label {
-    font-size: 11px;
-    color: #999;
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
   }
 }
 
@@ -404,8 +421,9 @@ const openInstagram = () => {
 }
 
 .copyright {
-  color: #999;
-  font-size: 13px;
+  color: #777;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 </style>
