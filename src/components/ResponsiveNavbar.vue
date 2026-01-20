@@ -73,16 +73,18 @@
 
           <q-btn
             flat
-            round
+            no-caps
             class="action-btn telegram-btn"
             icon="near_me"
+            :label="t('telegram')"
             @click="handleTelegram"
           />
           <q-btn
             flat
-            round
+            no-caps
             class="action-btn call-btn"
             icon="phone"
+            :label="t('call')"
             @click="handleCall"
           />
         </div>
@@ -162,6 +164,7 @@
               no-caps
               class="action-btn telegram-btn"
               icon="near_me"
+              :label="t('telegram')"
               @click="handleTelegram"
             />
             <q-btn
@@ -169,6 +172,7 @@
               no-caps
               class="action-btn call-btn"
               icon="phone"
+              :label="t('call')"
               @click="handleCall"
             />
           </div>
@@ -213,16 +217,22 @@ const translations: Record<LangCode, Record<string, string>> = {
     home: 'Home',
     work: 'Work',
     prices: 'Prices',
+    telegram: 'Telegram',
+    call: 'Call',
   },
   ru: {
     home: 'Главная',
     work: 'Услуги',
     prices: 'Цены',
+    telegram: 'Telegram',
+    call: 'Позвонить',
   },
   uz: {
     home: 'Bosh sahifa',
     work: 'Xizmatlar',
     prices: 'Narxlar',
+    telegram: 'Telegram',
+    call: "Qo'ng'iroq",
   },
 };
 
@@ -308,8 +318,8 @@ const handleTelegram = () => {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 32px;
-  padding: 9px 11px;
-  margin: 16px;
+  padding: 8px 12px;
+  margin: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   position: relative;
 
@@ -331,8 +341,8 @@ const handleTelegram = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -408,12 +418,12 @@ const handleTelegram = () => {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
-    padding: 4px 8px;
+    padding: 5px 8px;
     font-size: 13px;
     font-weight: 700;
     color: #333 !important;
     transition: all 0.3s ease;
-    min-height: 32px;
+    min-height: 33px;
 
     &:hover {
       background: rgba(255, 255, 255, 0.9) !important;
@@ -425,14 +435,18 @@ const handleTelegram = () => {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: none;
-    width: 46px;
-    height: 46px;
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 22px;
     font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.3px;
     transition: all 0.3s ease;
 
     .q-icon {
-      font-size: 22px;
-      -webkit-text-stroke: 1px currentColor;
+      font-size: 20px;
+      margin-right: 6px;
+      -webkit-text-stroke: 0.5px currentColor;
     }
 
     &.call-btn {
@@ -443,7 +457,7 @@ const handleTelegram = () => {
       &:hover {
         background: linear-gradient(135deg, #30B350 0%, #2BC34D 100%) !important;
         box-shadow: 0 6px 16px rgba(52, 199, 89, 0.4);
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
     }
 
@@ -455,7 +469,7 @@ const handleTelegram = () => {
       &:hover {
         background: linear-gradient(135deg, #0077b3 0%, #1E8DC4 100%) !important;
         box-shadow: 0 6px 16px rgba(0, 136, 204, 0.4);
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
     }
   }
@@ -469,8 +483,8 @@ const handleTelegram = () => {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 28px;
-    padding: 15px 19px;
-    margin: 16px;
+    padding: 13px 20px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -535,7 +549,7 @@ const handleTelegram = () => {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 28px;
-    margin: 0 16px 16px 16px;
+    margin: 0 10px 10px 10px;
     padding: 21px;
     display: flex;
     flex-direction: column;
