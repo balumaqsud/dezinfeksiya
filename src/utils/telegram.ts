@@ -10,7 +10,7 @@
 
 // Configuration
 const TELEGRAM_BOT_TOKEN = '8565537112:AAF9F32L27vNFGrARnFQMxK3NtechAIUO1Q';
-const TELEGRAM_CHAT_ID = '928102747'; // Your Telegram numeric user ID
+const TELEGRAM_CHAT_ID = '@dezenchik'; // Telegram account to receive bookings
 
 // Telegram API endpoint
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;

@@ -4,12 +4,12 @@
     <nav class="navbar-desktop">
       <div class="navbar-content">
         <!-- Logo/Icon -->
-        <div class="navbar-brand">
+        <router-link to="/home" class="navbar-brand">
           <div class="navbar-logo">
             <img :src="logoImage" alt="Logo" class="logo-image" />
           </div>
           <div class="brand-text">DEZ.CHIK</div>
-        </div>
+        </router-link>
 
         <!-- Navigation Links -->
         <div class="navbar-links">
@@ -94,12 +94,12 @@
     <!-- Mobile Navbar -->
     <nav class="navbar-mobile">
       <div class="mobile-header">
-        <div class="navbar-brand">
+        <router-link to="/home" class="navbar-brand">
           <div class="navbar-logo">
             <img :src="logoImage" alt="Logo" class="logo-image" />
           </div>
           <div class="brand-text">DEZ.CHIK</div>
-        </div>
+        </router-link>
         <q-btn
           flat
           round
@@ -151,7 +151,7 @@
               dense
               class="mobile-lang-btn"
               :class="{ active: currentLang === lang.code }"
-              @click="setLanguage(lang.code)"
+              @click="setLanguage(lang.code); closeMenu()"
             >
               <span class="lang-flag">{{ lang.flag }}</span>
               <span class="lang-code">{{ lang.shortName }}</span>
@@ -335,6 +335,13 @@ const handleTelegram = () => {
     align-items: center;
     gap: 13px;
     grid-column: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   .navbar-logo {
@@ -496,6 +503,13 @@ const handleTelegram = () => {
     align-items: center;
     gap: 11px;
     flex: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   .navbar-logo {
