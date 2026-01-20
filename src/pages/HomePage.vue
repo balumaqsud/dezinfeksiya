@@ -59,8 +59,8 @@
                 outlined
                 dense
                 class="booking-input"
-                mask="+998 ## ### ## ##"
-                unmasked-value
+                prefix="+"
+                type="tel"
                 :rules="[val => !!val || t('phoneRequired'), val => val.length >= 9 || t('phoneInvalid')]"
               >
                 <template v-slot:prepend>
@@ -251,7 +251,12 @@
     <section class="testimonials-section">
       <div class="testimonials-container">
         <h2 class="section-title">{{ t('testimonialsTitle') }}</h2>
-        <div class="testimonials-wrapper">
+        <div
+          class="testimonials-wrapper"
+          @touchstart="handleTouchStart"
+          @touchmove="handleTouchMove"
+          @touchend="handleTouchEnd"
+        >
           <div class="testimonials-track" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
             <div class="testimonials-slide" v-for="(slideGroup, slideIndex) in testimonialSlides" :key="slideIndex">
               <div class="testimonials-grid">
@@ -344,12 +349,15 @@ const openBookingModal = () => {
 const submitBooking = async () => {
   isSubmitting.value = true;
 
+  // Format phone with + prefix
+  const formattedPhone = '+' + bookingForm.phone;
+
   try {
     // Send booking data to Telegram
     const result = await sendBookingToTelegram({
       name: bookingForm.name,
       address: bookingForm.address,
-      phone: bookingForm.phone
+      phone: formattedPhone
     });
 
     if (result.success) {
@@ -373,7 +381,7 @@ const submitBooking = async () => {
       openTelegramWithMessage({
         name: bookingForm.name,
         address: bookingForm.address,
-        phone: bookingForm.phone
+        phone: formattedPhone
       });
 
       showBookingModal.value = false;
@@ -390,7 +398,7 @@ const submitBooking = async () => {
     openTelegramWithMessage({
       name: bookingForm.name,
       address: bookingForm.address,
-      phone: bookingForm.phone
+      phone: formattedPhone
     });
 
     showBookingModal.value = false;
@@ -446,6 +454,39 @@ const goToSlide = (index: number) => {
   currentSlide.value = index;
 };
 
+// Touch/Swipe handling for testimonials
+let touchStartX = 0;
+let touchEndX = 0;
+
+const handleTouchStart = (e: TouchEvent) => {
+  const touch = e.changedTouches[0];
+  if (touch) {
+    touchStartX = touch.screenX;
+  }
+};
+
+const handleTouchMove = (e: TouchEvent) => {
+  const touch = e.changedTouches[0];
+  if (touch) {
+    touchEndX = touch.screenX;
+  }
+};
+
+const handleTouchEnd = () => {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      // Swiped left - go to next slide
+      nextSlide();
+    } else {
+      // Swiped right - go to previous slide
+      prevSlide();
+    }
+  }
+};
+
 // Language system - synced with navbar
 type LangCode = 'en' | 'ru' | 'uz';
 
@@ -471,8 +512,8 @@ const translations: Record<LangCode, Record<string, string>> = {
     bookNow: "Buyurtma berish",
     bookingSuccess: "Buyurtmangiz qabul qilindi! Tez orada siz bilan bog'lanamiz.",
     bookingTelegramRedirect: "Telegram orqali buyurtma yuborilmoqda...",
-    serviceArea: "Butun O'zbekiston bo'ylab",
-    serviceAreaDesc: "Mamlakatning barcha hududlarida keng ko'lamli xizmatlar ko'rsatamiz.",
+    serviceArea: "Toshkent viloyati",
+    serviceAreaDesc: "Toshkent shahri va viloyatida keng ko'lamli xizmatlar ko'rsatamiz.",
     qualityService: "Sifatli xizmat",
     qualityServiceDesc: "Har bir mijozga individual yondashuv, barcha nuanslarni hisobga olamiz.",
     experts: "Tajribali mutaxassislar",
@@ -535,8 +576,8 @@ const translations: Record<LangCode, Record<string, string>> = {
     bookNow: "Заказать",
     bookingSuccess: "Ваш заказ принят! Мы скоро свяжемся с вами.",
     bookingTelegramRedirect: "Перенаправление в Telegram...",
-    serviceArea: "По всему Узбекистану",
-    serviceAreaDesc: "Мы охватываем все регионы страны, предоставляя широкий спектр услуг.",
+    serviceArea: "Ташкентский регион",
+    serviceAreaDesc: "Работаем в Ташкенте и Ташкентской области, предоставляя широкий спектр услуг.",
     qualityService: "Качественный сервис",
     qualityServiceDesc: "Индивидуальная программа заботы, учитывая все нюансы вашего пространства.",
     experts: "Опытные специалисты",
@@ -599,8 +640,8 @@ const translations: Record<LangCode, Record<string, string>> = {
     bookNow: "Book Now",
     bookingSuccess: "Your booking has been received! We will contact you soon.",
     bookingTelegramRedirect: "Redirecting to Telegram...",
-    serviceArea: "All across Uzbekistan",
-    serviceAreaDesc: "We cover all regions of the country, providing a wide range of services.",
+    serviceArea: "Tashkent Region",
+    serviceAreaDesc: "We cover Tashkent city and region, providing a wide range of services.",
     qualityService: "Quality Service",
     qualityServiceDesc: "Individual care program, taking into account all the nuances of your space.",
     experts: "Experienced Specialists",
@@ -693,22 +734,26 @@ const handleTelegram = () => {
 // Booking Modal Styles
 .booking-modal {
   border-radius: 20px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-width: 900px;
   width: 95vw;
   position: relative;
+  max-height: 90vh;
 
   @media (max-width: 768px) {
     max-width: 100%;
     width: 94vw;
     margin: 8px;
     border-radius: 16px;
+    max-height: 85vh;
   }
 
   @media (max-width: 480px) {
     width: 96vw;
     margin: 4px;
     border-radius: 14px;
+    max-height: 80vh;
   }
 }
 
@@ -1416,30 +1461,52 @@ const handleTelegram = () => {
   @media (max-width: 768px) {
     padding: 45px 16px;
   }
+
+  @media (max-width: 480px) {
+    padding: 35px 12px;
+  }
 }
 
 .testimonials-container {
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 
 .testimonials-wrapper {
   overflow: hidden;
   margin-bottom: 32px;
   position: relative;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 
   @media (max-width: 768px) {
     margin-bottom: 24px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   @media (max-width: 480px) {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
 .testimonials-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
 
@@ -1448,9 +1515,15 @@ const handleTelegram = () => {
   flex-shrink: 0;
   box-sizing: border-box;
   padding: 0 8px;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 
   @media (max-width: 480px) {
-    padding: 0 4px;
+    padding: 0 8px;
   }
 }
 
@@ -1458,15 +1531,21 @@ const handleTelegram = () => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  width: 100%;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 16px;
+    max-width: 400px;
 
     // Show only one card per slide on mobile
     .testimonial-card:nth-child(2) {
       display: none;
     }
+  }
+
+  @media (max-width: 480px) {
+    max-width: 320px;
   }
 }
 
@@ -1606,8 +1685,8 @@ const handleTelegram = () => {
   gap: 12px;
   margin-top: 0;
 
-  @media (max-width: 480px) {
-    gap: 8px;
+  @media (max-width: 768px) {
+    display: none; // Hide nav buttons on mobile, use swipe instead
   }
 }
 
@@ -1625,13 +1704,6 @@ const handleTelegram = () => {
     opacity: 0.4;
     cursor: not-allowed;
   }
-
-  @media (max-width: 480px) {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    min-height: 36px !important;
-  }
 }
 
 .testimonial-dots {
@@ -1639,6 +1711,16 @@ const handleTelegram = () => {
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 6px;
+    margin-top: 12px;
+  }
 }
 
 .dot {
@@ -1656,6 +1738,11 @@ const handleTelegram = () => {
   &.active {
     background: #1a5f4a;
     transform: scale(1.2);
+  }
+
+  @media (max-width: 480px) {
+    width: 8px;
+    height: 8px;
   }
 }
 
