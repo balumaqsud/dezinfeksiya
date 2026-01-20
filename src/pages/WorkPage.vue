@@ -24,47 +24,6 @@
       </div>
     </section>
 
-    <!-- Pest Types Section -->
-    <section class="pests-section">
-      <div class="pests-container">
-        <h2 class="section-title">{{ t('whatWeEliminate') }}</h2>
-        <div class="pests-grid">
-          <div class="pest-card">
-            <div class="pest-icon">🪳</div>
-            <span class="pest-name">{{ t('cockroach') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🐜</div>
-            <span class="pest-name">{{ t('ant') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🪲</div>
-            <span class="pest-name">{{ t('bedbug') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🦟</div>
-            <span class="pest-name">{{ t('mosquito') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🪰</div>
-            <span class="pest-name">{{ t('fly') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🐀</div>
-            <span class="pest-name">{{ t('rat') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🦠</div>
-            <span class="pest-name">{{ t('bacteria') }}</span>
-          </div>
-          <div class="pest-card">
-            <div class="pest-icon">🕷️</div>
-            <span class="pest-name">{{ t('flea') }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Services List Section - Alternating Layout -->
     <section class="services-about-section">
       <div class="services-about-container">
@@ -116,6 +75,47 @@
             </div>
             <h2 class="services-row-title">{{ t('treatmentTitle') }}</h2>
             <p class="services-row-desc">{{ t('treatmentDesc') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pest Types Section -->
+    <section class="pests-section">
+      <div class="pests-container">
+        <h2 class="section-title">{{ t('whatWeEliminate') }}</h2>
+        <div class="pests-grid">
+          <div class="pest-card">
+            <div class="pest-icon">🪳</div>
+            <span class="pest-name">{{ t('cockroach') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🐜</div>
+            <span class="pest-name">{{ t('ant') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🪲</div>
+            <span class="pest-name">{{ t('bedbug') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🦟</div>
+            <span class="pest-name">{{ t('mosquito') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🪰</div>
+            <span class="pest-name">{{ t('fly') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🐀</div>
+            <span class="pest-name">{{ t('rat') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🦠</div>
+            <span class="pest-name">{{ t('bacteria') }}</span>
+          </div>
+          <div class="pest-card">
+            <div class="pest-icon">🕷️</div>
+            <span class="pest-name">{{ t('flea') }}</span>
           </div>
         </div>
       </div>

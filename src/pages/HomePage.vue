@@ -1372,6 +1372,11 @@ const handleTelegram = () => {
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
+
+    // Show only one card per slide on mobile
+    .testimonial-card:nth-child(2) {
+      display: none;
+    }
   }
 }
 
